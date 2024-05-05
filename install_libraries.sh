@@ -11,7 +11,8 @@ check_library() {
 }
 
 # Check and install bcm2835 library
-check_library "/usr/local/include/bcm2835.h" "bcm2835.h" || {
+check_library "/usr/local/include/bcm2835.h" "bcm2835.h" && \
+check_library "/usr/local/lib/libbcm2835.a"  "libbcm2835.a" || {
     mkdir bcm2835_install
     cd bcm2835_install
     wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.75.tar.gz
