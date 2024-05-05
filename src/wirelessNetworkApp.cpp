@@ -192,7 +192,7 @@ int main(int argc, char *argv[]) {
                     // Clearing the eds flag to prepare for next time RPi enters sleep mode
                     bcm2835_gpio_set_eds(PIN);
 
-                    cout << "The mock sensor is on!" << endl;
+                    cout << "The RPi is on!" << endl;
 
                     // Turn on the necessary relays on the SSR hat connected to the RPi
                     write_i2c_relayRegister(ADDR_1, NO_1, ON);      // Turning on the mock sensor
@@ -220,7 +220,7 @@ int main(int argc, char *argv[]) {
                     // Now that RPi has received an "On" signal, it should go to check the sensor
                     state = CHECK_SENSOR_ON;
                 } else {
-                    cout << "The mock sensor is off" << endl;
+                    cout << "The RPi is off" << endl;
 
                     // Turning off the necessary relays on the SSR hat connected to the RPi
                     write_i2c_relayRegister(ADDR_1, NO_1, OFF);   // Turning off the mock sensor
