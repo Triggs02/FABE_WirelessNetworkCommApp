@@ -39,26 +39,32 @@ Steps to Properly Build and Run the WirelessNetworkApp:
 git clone https://github.com/Triggs02/FABE_WirelessNetworkCommApp.git
 ```
 
-2. Run the bash shell 'install_libaries.sh' to install all necessary dependencies used to make the 'WirelessNetworkApp' run properly.
+2. Ensure that the 'install_libraries.sh' script is executable by issuing the following command in the Linux terminal.
+
+```bash
+chmod +x install_libraries.sh
+```
+
+3. Run the bash shell 'install_libaries.sh' to install all necessary dependencies used to make the 'WirelessNetworkApp' run properly.
 
 ```bash
 ./install_libraries.sh
 ```
 
-3. Ensure you are currently in the root directory of the repository and then run the Makefile present in the root directory to build the 'WirelessNetworkApp - the command required to run the Makefile has been provided below.  This should result in two additional sub-directories created: obj/ and build/.
+4. Ensure you are currently in the root directory of the repository and then run the Makefile present in the root directory to build the 'WirelessNetworkApp - the command required to run the Makefile has been provided below.  This should result in two additional sub-directories created: obj/ and build/.
 
 ```bash
 make
 ```
 
-4. After running the Makefile, the built executable should be present in the 'build/' sub-directory. Navigating there and running the executable should result in a working program.
+5. After running the Makefile, the built executable should be present in the 'build/' sub-directory. Navigating there and running the executable should result in a working program.
 
 ```bash
 cd build/
 ./wirelessNetworkApp
 ```
 
-5. (OPTIONAL) To clean up the obj/ and build/ folders from the working directory, issue the following Make command in the Linux terminal:
+6. (OPTIONAL) To clean up the obj/ and build/ folders from the working directory, issue the following Make command in the Linux terminal:
 
 ```bash
 make clean
