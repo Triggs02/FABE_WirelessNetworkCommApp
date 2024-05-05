@@ -45,7 +45,7 @@ git clone https://github.com/Triggs02/FABE_WirelessNetworkCommApp.git
 chmod +x install_libraries.sh
 ```
 
-3. Run the bash shell 'install_libaries.sh' to install all necessary dependencies used to make the 'WirelessNetworkApp' run properly.
+3. Run the bash shell 'install_libaries.sh' to install all necessary dependencies used to make the 'WirelessNetworkApp' run properly.  Two sub-directories titled "Data_Collected_Offline" and "Temp_Data_Collected" should have been created after running this script.  If they have not been, then they must be created in the root directory.
 
 ```bash
 ./install_libraries.sh
