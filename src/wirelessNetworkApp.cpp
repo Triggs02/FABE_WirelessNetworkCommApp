@@ -196,7 +196,7 @@ int main(int argc, char *argv[]) {
 
                     // Turn on the necessary relays on the SSR hat connected to the RPi
                     write_i2c_relayRegister(ADDR_1, NO_1, ON);      // Turning on the mock sensor
-                    write_i2c_relayRegister(ADDR_1, NO_2, ON);      // Turning on the OLED screen
+                    // write_i2c_relayRegister(ADDR_1, NO_2, ON);      // Turning on the OLED screen - Uncomment once OLED is working
 
                     // For FABE: Leave this uncommented until the OLED has been completely implemented.
                     //           Please explore the interface designed for interacting the OLED
@@ -224,7 +224,7 @@ int main(int argc, char *argv[]) {
 
                     // Turning off the necessary relays on the SSR hat connected to the RPi
                     write_i2c_relayRegister(ADDR_1, NO_1, OFF);   // Turning off the mock sensor
-                    write_i2c_relayRegister(ADDR_1, NO_2, OFF);   // Turning off the OLED screen
+                    // write_i2c_relayRegister(ADDR_1, NO_2, OFF);   // Turning off the OLED screen -  - Uncomment once OLED is working
 
                     // Setting the slave addr back to the sensors
                     bcm2835_i2c_setSlaveAddress(arduinoID);

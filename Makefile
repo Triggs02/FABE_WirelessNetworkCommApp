@@ -2,30 +2,41 @@
 # wireless communication system.
 
 CC=g++
-CFLAGS=-c -Wall -Iinclude
+CFLAGS=-c -Wall
 LDFLAGS=-lbcm2835 -lSSD1306_OLED_RPI
-CPP_SOURCES=$(wildcard src/*.cpp)
-C_SOURCES=$(wildcard src/*.c)
-CPP_OBJECTS=$(addprefix obj/,$(notdir $(CPP_SOURCES:.cpp=.o)))
-C_OBJECTS=$(addprefix obj/,$(notdir $(C_SOURCES:.c=.o)))
-EXECUTABLE=bin/wirelessNetworkApp
+INC_DIR=include
+SRC_DIR=src
+OBJ_DIR=obj
+EXECUTABLE=wirelessNetworkApp
 
-all: obj build $(EXECUTABLE)
+# Get all source files
+CPP_SOURCES=$(wildcard $(SRC_DIR)/*.cpp)
+C_SOURCES=$(wildcard $(SRC_DIR)/*.c)
+
+# Generate object file names
+CPP_OBJECTS=$(addprefix $(OBJ_DIR)/,$(notdir $(CPP_SOURCES:.cpp=.o)))
+C_OBJECTS=$(addprefix $(OBJ_DIR)/,$(notdir $(C_SOURCES:.c=.o)))
+
+# Include directories
+INC=-I$(INC_DIR)
+
+all: obj $(EXECUTABLE)
 
 obj:
 	mkdir obj
 
-build:
-	mkdir bin
-
 $(EXECUTABLE): $(CPP_OBJECTS) $(C_OBJECTS)
-	$(CC) $(CPP_OBJECTS) $(C_OBJECTS) -o $@ $(LDFLAGS)
+	$(CC) $^ -o $(EXECUTABLE) $(LDFLAGS)
 
-obj/%.o: src/%.cpp
-	$(CC) $(CFLAGS) $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
+	$(CC) $(CFLAGS) $(INC) $< -o $@
 
-obj/%.o: src/%.c
-	$(CC) $(CFLAGS) $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) $(INC) $< -o $@
 
 clean:
-	rm -rf obj bin
+	rm -rf obj $(EXECUTABLE)
+
+
+
+
