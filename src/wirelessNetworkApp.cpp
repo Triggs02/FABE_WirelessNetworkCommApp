@@ -159,7 +159,7 @@ int main(int argc, char *argv[]) {
             bcm2835_i2c_set_baudrate(100000);           // Setting a 100K baudrate (standard) for i2C communications - translates to 100 KHz I2C bus frequency
         }
     } else {
-        cout << "Did not supply the correct argument. Supply either an 'I' or 'C'" << endl;
+        cout << "Did not supply the correct argument. Supply either an 'I' or 'S'" << endl;
         return 1;
     }
 
