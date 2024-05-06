@@ -52,22 +52,21 @@ chmod +x install_libraries.sh
 ./install_libraries.sh
 ```
 
-4. Ensure you are currently in the root directory of the repository and then run the Makefile present in the root directory to build the 'WirelessNetworkApp - the command required to run the Makefile has been provided below.  This should result in two additional sub-directories created: obj/ and build/.
+4. Ensure you are currently in the root directory of the repository and then run the Makefile present in the root directory to build the 'WirelessNetworkApp - the command required to run the Makefile has been provided below.  This should result in one additional sub-directory being created: obj/.
 
 ```bash
 make
 ```
 
-5. After running the Makefile, the built executable should be present in the 'bin/' sub-directory. Navigating there and running the executable should result in a working program (**All Hardware Must Be Connected**).  The program expects the user to specify the communication type (either an 'I' for I2C or 'S' for Serial (UART)) as an argument to the executable.  In this case, I2C communications are what has been fully tested by the team; therefore, the value 'I' should be supplied.  The program is required to be run as a sudo user due to the bcm2835 libraries' requirements.
+5. After running the Makefile, the built executable should be present in the root folder of the project. Navigating there and running the executable should result in a working program (**All Hardware Must Be Connected**).  The program expects the user to specify the communication type (either an 'I' for I2C or 'S' for Serial (UART)) as an argument to the executable.  In this case, I2C communications are what has been fully tested by the team; therefore, the value 'I' should be supplied.  The program is required to be run as a sudo user due to the bcm2835 libraries' requirements.
 
 ```bash
-cd bin/
 sudo ./wirelessNetworkApp I
 ```
 
 6. While the program runs, it can be stopped at any time by pressing the 'Ctrl + C' keys on the keyboard being used to type on the Raspberry Pi.  This is specifically configured on the Wireless Network App to safely terminate all connections made during the program's life time.
 
-6. (OPTIONAL) To clean up the obj/ and build/ folders from the working directory, issue the following Make command in the Linux terminal:
+6. (OPTIONAL) To clean up the obj/ folder from the working directory, issue the following Make command in the Linux terminal:
 
 ```bash
 make clean
