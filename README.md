@@ -33,13 +33,14 @@ Details on how the Mock Sensor program operates have been provided in the 'Doc/'
 
 Steps to Properly Build and Run the WirelessNetworkApp:
 
-1. Clone the 'FABE_WirelessNetworkCommApp' repository from Github by issuing the following command in the Linux command line from where you intend to use the code:
+1. Clone the 'FABE_WirelessNetworkCommApp' repository from Github and then enter it by issuing the following commands in the Linux command line from where you intend to use the code:
    
 ```bash
 git clone https://github.com/Triggs02/FABE_WirelessNetworkCommApp.git
+cd FABE_WirelessNetworkCommApp
 ```
 
-2. Ensure that the 'install_libraries.sh' script is executable by issuing the following command in the Linux terminal.
+2. Ensure that the 'install_libraries.sh' script is executable by issuing the following command in the Linux terminal.  The file is considered executable on the Raspberry Pi when the file name appears green.
 
 ```bash
 chmod +x install_libraries.sh
@@ -57,11 +58,11 @@ chmod +x install_libraries.sh
 make
 ```
 
-5. After running the Makefile, the built executable should be present in the 'build/' sub-directory. Navigating there and running the executable should result in a working program.
+5. After running the Makefile, the built executable should be present in the 'bin/' sub-directory. Navigating there and running the executable should result in a working program (**All Hardware Must Be Connected**).  The program expects the user to specify the communication type (either an 'I' for I2C or 'S' for Serial (UART)) as an argument to the executable.  In this case, I2C communications are what has been fully tested by the team; therefore, the value 'I' should be supplied.
 
 ```bash
-cd build/
-./wirelessNetworkApp
+cd bin/
+./wirelessNetworkApp I
 ```
 
 6. (OPTIONAL) To clean up the obj/ and build/ folders from the working directory, issue the following Make command in the Linux terminal:
