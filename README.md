@@ -65,6 +65,8 @@ cd bin/
 sudo ./wirelessNetworkApp I
 ```
 
+6. While the program runs, it can be stopped at any time by pressing the 'Ctrl + C' keys on the keyboard being used to type on the Raspberry Pi.  This is specifically configured on the Wireless Network App to safely terminate all connections made during the program's life time.
+
 6. (OPTIONAL) To clean up the obj/ and build/ folders from the working directory, issue the following Make command in the Linux terminal:
 
 ```bash
